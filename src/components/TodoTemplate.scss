@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100;400;700&display=swap');
 
-*{
-  font-family: 'IBM Plex Sans KR', sans-serif;
-}
-
 .TodoTemplate {
   width: 512px;
   margin: auto;
@@ -18,14 +14,4 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-input {
-  height: 32px;
-  font-size: 15px;
-  border: 0;
-  border-radius: 15px;
-  outline: none;
-  padding-left: 10px;
-  background-color: rgb(233, 233, 233);
 }

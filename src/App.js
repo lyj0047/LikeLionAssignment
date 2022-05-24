@@ -3,6 +3,8 @@ import TodoTemplate from './components/TodoTemplate';
 import TodoInsert from './components/TodoInsert'
 import TodoList from './components/TodoList'
 import { useCallback } from 'react';
+import './App.scss'
+import * as Styles from "./StyledStyles"; // StyledStyles.js의 모든 변수들을 import
 
 function App(){
   const [todos, setTodos] = useState([

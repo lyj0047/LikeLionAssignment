@@ -1,7 +1,7 @@
 //화면을 가운데 정렬시켜 주는 역할
 
 import React from "react";
-import './TodoTemplate.css'
+import './TodoTemplate.scss'
 
 const TodoTemplate = ({children}) => {
   return (
