@@ -2,30 +2,44 @@
 
 import React, { useState, useCallback } from "react";
 import './TodoInsert.scss'
+import { useSetRecoilState } from "recoil";
+import { todosState } from "../atoms/todos";
 
-const TodoInsert = ({ onInsert }) => {
-  //input 태그 안에서 값을 입력할 때마다 컴포넌트 state인 value에 값이 들어가게 정의
-  const [value, setValue] = useState('');
+let id = 0
+const getId = () => id++
 
-  const onChange = useCallback((e) => {
-    setValue(e.target.value);
-  }, [])
+const TodoInput = () => {
+  const setTodo = useSetRecoilState(todosState)
+  const [text, setText] = useState('')
 
-  const onSubmit = useCallback(
-    (e) => {
-      onInsert(value);
-      setValue('');
+  const onChange = e => {
+    setText(e.target.value)
+  }
 
-      e.preventDefault();
-    },
-    [onInsert, value]
-  )
+  const addTodo = () => {
+    if (!text) {
+      alert('정확한 값을 입력해주세요!')
+      return
+    }
+
+    setTodo(todos => todos.concat({ id: getId(), text, completed: false }))
+    setText('')
+  }
+
+  const onKeyDown = e => {
+    if (e.key === 'Enter') {
+      addTodo()
+    }
+  }
 
   return (
-    <form onSubmit={onSubmit}>
-      <input placeholder="할 일을 입력하세요" value={value} onChange={onChange} />
-      <button type="submit" onSubmit={onSubmit}>+</button>
-    </form>
+    <Input
+      value={text}
+      onChange={onChange}
+      onKeyDown={onKeyDown}
+      placeholder="할일을 입력해주세요."
+      autoFocus
+    />
   )
 }
 
