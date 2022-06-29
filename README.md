@@ -29,4 +29,4 @@
     4)  componentDidMount
       -  컴포넌트 생성 ~ 렌더링(render 종료) 까지 진행된 후 호출되는 함수입니다.
 
-    컴포넌트가 render될 때에는 mount과정을 거친다. 하지만 props나 state가 변경되어 render될 때에는 mount를 거치지 않는다.
+    컴포넌트가 render될 때에는 mount과정을 거친다. 하지만 props나 state가 변경되어 render될 때에는 mount를 거치지 않는다.# todolist
